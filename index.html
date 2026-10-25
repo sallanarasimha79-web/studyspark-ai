@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="StudySpark AI helps students in Classes 1–12 understand school subjects with simple explanations, step-by-step help, and practice quizzes.">
+  <title>StudySpark AI — Make learning click</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="StudySpark AI home">
+        <span class="brand-mark">✦</span>
+        <span>StudySpark<span class="brand-ai"> AI</span></span>
+      </a>
+      <div class="top-actions">
+        <span class="status-dot"></span><span class="status-label" id="modeStatus">Demo mode</span>
+        <button class="icon-button" id="themeButton" aria-label="Toggle colour theme" title="Toggle theme">☼</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span>✦</span> YOUR PERSONAL STUDY SIDEKICK</div>
+        <h1>Big questions.<br><span>Clear answers.</span></h1>
+        <p class="hero-copy">From Class 1 to Class 12, make tricky topics feel simple. Ask anything, learn your way, and build confidence one question at a time.</p>
+        <div class="hero-pills">
+          <span>↗ Step-by-step help</span><span>◎ Learn at your pace</span><span>✧ Practice mode</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Study assistant">
+        <aside class="setup-panel">
+          <div class="section-heading">
+            <div><span class="mini-label">LET'S PERSONALISE</span><h2>Your study setup</h2></div>
+            <span class="sparkle">✦</span>
+          </div>
+
+          <label for="grade">Your class</label>
+          <select id="grade">
+            <option value="1">Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option>
+            <option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option>
+            <option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option>
+            <option value="10" selected>Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option>Maths</option><option>Science</option><option>Physics</option><option>Chemistry</option>
+            <option>Biology</option><option>English</option><option>Social Studies</option><option>Computer Science</option>
+            <option>Telugu</option><option>Hindi</option><option>Other</option>
+          </select>
+
+          <label>How should I explain?</label>
+          <div class="mode-list" id="modeList">
+            <button class="mode-option active" data-mode="simple"><span class="mode-icon violet">☼</span><span><strong>Super simple</strong><small>Easy words + examples</small></span><span class="radio-dot"></span></button>
+            <button class="mode-option" data-mode="steps"><span class="mode-icon blue">↗</span><span><strong>Step by step</strong><small>Understand every step</small></span><span class="radio-dot"></span></button>
+            <button class="mode-option" data-mode="exam"><span class="mode-icon orange">✎</span><span><strong>Exam answer</strong><small>Clear, organised response</small></span><span class="radio-dot"></span></button>
+            <button class="mode-option" data-mode="quiz"><span class="mode-icon green">✧</span><span><strong>Quiz me</strong><small>Practice and check yourself</small></span><span class="radio-dot"></span></button>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-card-icon">⚡</div>
+            <div><strong>Little steps, big progress</strong><p>Every good question is progress. Keep being curious.</p></div>
+          </div>
+        </aside>
+
+        <section class="chat-panel">
+          <div class="chat-header">
+            <div class="assistant-avatar">✦</div>
+            <div class="assistant-title"><strong>Your AI study buddy</strong><span><i></i> Ready to learn with you</span></div>
+            <button class="clear-button" id="clearChat" title="Start a new conversation">＋ New chat</button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages" aria-live="polite">
+            <div class="welcome-card">
+              <div class="welcome-art"><span>✦</span><span>✧</span><span>✳</span><div class="book-art">▱</div></div>
+              <h2>Hey, learner! <span>👋</span></h2>
+              <p>What are we figuring out today?</p>
+              <div class="suggestion-grid">
+                <button class="suggestion" data-prompt="Explain photosynthesis with a simple real-life example."><span>🌱</span><span><strong>Explain a concept</strong><small>Make it easy to understand</small></span><b>↗</b></button>
+                <button class="suggestion" data-prompt="Give me one practice question for my class and subject, then wait for my answer."><span>🧠</span><span><strong>Test my knowledge</strong><small>One question at a time</small></span><b>↗</b></button>
+                <button class="suggestion" data-prompt="Show me a step-by-step method to solve a maths problem, with an example."><span>✏️</span><span><strong>Solve step by step</strong><small>See how it works</small></span><b>↗</b></button>
+                <button class="suggestion" data-prompt="Help me make a short revision plan for an upcoming school test."><span>🚀</span><span><strong>Plan my revision</strong><small>Turn stress into a plan</small></span><b>↗</b></button>
+              </div>
+            </div>
+          </div>
+
+          <form class="composer" id="askForm">
+            <textarea id="questionInput" rows="1" maxlength="4000" placeholder="Ask any school question…" aria-label="Your question"></textarea>
+            <div class="composer-bottom">
+              <span class="composer-hint">Class <b id="classLabel">10</b> · <span id="subjectLabel">Maths</span></span>
+              <button type="submit" class="send-button" id="sendButton"><span>Ask AI</span><span>↑</span></button>
+            </div>
+          </form>
+          <p class="privacy-note">AI can make mistakes. Check important answers with your teacher or textbook.</p>
+        </section>
+      </section>
+
+      <section class="special-section">
+        <div class="special-copy"><span class="mini-label">THE STUDYSPARK DIFFERENCE</span><h2>Don't just get the answer.<br><span>Make it click.</span></h2><p>Switch how you learn whenever you need. Build understanding, not just a page full of memorised words.</p></div>
+        <div class="feature-cards">
+          <article><span class="feature-icon purple">↻</span><h3>Explain it another way</h3><p>Ask for a simpler example if the first explanation doesn't click.</p></article>
+          <article><span class="feature-icon mint">◈</span><h3>Find your weak spots</h3><p>Use quiz mode to practise one question at a time and learn from mistakes.</p></article>
+          <article><span class="feature-icon peach">✧</span><h3>Make it exam-ready</h3><p>Turn understanding into neat answers you can revise before a test.</p></article>
+        </div>
+      </section>
+      <footer><a class="brand footer-brand" href="#"><span class="brand-mark">✦</span><span>StudySpark<span class="brand-ai"> AI</span></span></a><span>Made for curious minds · Classes 1–12</span><span class="footer-right">Learn a little. Grow a lot.</span></footer>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
